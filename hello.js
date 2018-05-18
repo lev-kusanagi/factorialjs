@@ -1,3 +1,6 @@
+Error.stackTraceLimit = Infinity;
+
+
 const createIEXECClient = require('iexec-server-js-client');
 const iexec = createIEXECClient({ server: 'https://testxw.iex.ec:443' });
 const Web3 = require('web3');
@@ -8,6 +11,4 @@ web3 = new Web3(new Web3.providers.HttpProvider("https://ropsten.infura.io/ABw2a
 const jwtoken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJibG9ja2NoYWluYWRkciI6IjB4ODRlZGRjNDU1YjIyNGI1MjMzYjYzM2ZhYjc0NzMxMTE3ODQ2Y2YxOSIsImlzcyI6Inh3aGVwMTEiLCJpYXQiOjE1MjMwMjQyOTJ9.pmGrGhGGODV10fPGgw7OJAJqkgYTnbzr1v4zLqyD0Z4';
 const cookie = 'be6823a77190f1a9438f90bb0eade9ff779cb55d7bc8ad84ea6efe9bdcd43c18';
 
-// iexec.getAppByName(deployTxHash).then(console.log);
-const submitTxHash = '0x1dd46f0049a982c9746d060c8141dee61c0ed4ffdcd30fb0ae09c598e251da6c'
-iexec.getWorkByExternalID(submitTxHash).then(console.log)
+console.trace(iexec.getAppByName(deployTxHash).then(console.log));
